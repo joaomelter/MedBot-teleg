@@ -3,8 +3,8 @@ import os
 from dotenv import load_dotenv # Importa a função para carregar variáveis do .env
 
 load_dotenv()
-
-bot = telebot.TeleBot('TELEGRAM_BOT_TOKEN')
+TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(func=lambda msg: msg.text.lower() == 'ajuda')
 def ajuda(msg):
