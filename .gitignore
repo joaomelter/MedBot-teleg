@@ -1,0 +1,6 @@
+# Ignora o arquivo .env que tem o token do bot
+.env
+
+# Outras linhas que p ignorar arquivos py 
+*.pyc
+__pycache__/
