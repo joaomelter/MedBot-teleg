@@ -1,2 +1,26 @@
-idf_component_register(SRCS "http_client.c" "compartimentos.c" "time_sinc.c" "wifi.c" "led.c" "buzzer.c" "main.c"
-                    INCLUDE_DIRS ".")
+idf_component_register(
+    SRCS 
+        "http_client.c"
+        "compartimentos.c"
+        "time_sinc.c"
+        "wifi.c"
+        "led.c"
+        "buzzer.c"
+        "main.c"
+    INCLUDE_DIRS 
+        "."
+    REQUIRES
+        lwip
+        freertos
+        log
+    PRIV_REQUIRES
+        esp_wifi
+        esp_netif
+        nvs_flash
+        esp_http_client
+        esp_tls
+        mbedtls
+        wifi_provisioning
+        driver
+        esp_event
+)
