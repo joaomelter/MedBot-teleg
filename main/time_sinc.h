@@ -1,21 +1,52 @@
-#pragma once // Evita múltiplas inclusões desse arquivo
+#pragma once
 
-// C standard libs
-#include <stdio.h>    // Funções básicas de entrada e saída
-#include <time.h>     // Biblioteca para manipular o tempo
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// ESP-IDF libs
-#include "esp_log.h"      // Logs no terminal
-#include "esp_sntp.h"     // Sincronização via NTP
-#include "freertos/FreeRTOS.h" // Gerenciamento de tarefas
-#include "freertos/task.h"
+#include <time.h>
+#include <stdbool.h>
+#include "esp_err.h"
 
-// Protótipos das funções
-void iniciar_sntp(void);   // Inicializa a sincronização NTP (Network Time Protocol)
-void printf_time(void);    // Mostra o horário atual
+/**
+ * @file time_sinc.h
+ * @brief Módulo de sincronização de tempo via NTP
+ * 
+ * Fornece sincronização com servidores NTP e funções para manipulação de tempo.
+ * Requer conexão WiFi ativa antes de chamar iniciar_sntp().
+ */
 
-/*
-NTP é um protocolo de rede utilizado para sincronizar o relógio do ESP32 ou qualquer computador com os servidores de hora oficial da internet.
-SNTP é uma versão simplificada desses protocolos, utilizada em sistemas embarcados.
-Log é o registro de informações.
-*/
+/* Constantes públicas */
+#define TIME_SYNC_TIMEOUT_MS 10000  // Timeout de 10 segundos para sincronização
+
+/**
+ * @brief Inicializa o cliente SNTP
+ * 
+ * Configura múltiplos servidores NTP e inicia a sincronização.
+ * Deve ser chamado APÓS a conexão WiFi estar estabelecida.
+ */
+void iniciar_sntp(void);
+
+/**
+ * @brief Verifica se a sincronização foi concluída
+ * @return true se o tempo está sincronizado, false caso contrário
+ */
+bool sincronizacao_concluida(void);
+
+/**
+ * @brief Exibe o horário atual formatado
+ * 
+ * Mostra a data/hora no formato: "YYYY-MM-DD HH:MM:SS"
+ * Se não sincronizado, exibe aviso.
+ */
+void printf_time(void);
+
+/**
+ * @brief Obtém o timestamp atual
+ * @return Timestamp Unix em segundos, ou -1 se não sincronizado
+ */
+time_t obter_timestamp(void);
+
+#ifdef __cplusplus
+}
+#endif

@@ -12,15 +12,13 @@ idf_component_register(
     REQUIRES
         lwip
         freertos
-        log
+        
     PRIV_REQUIRES
         esp_wifi
         esp_netif
-        nvs_flash
         esp_http_client
-        esp_tls
-        mbedtls
-        wifi_provisioning
+        nvs_flash
         driver
         esp_event
+
 )
