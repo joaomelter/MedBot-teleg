@@ -18,6 +18,7 @@
   ],
   "idf.flashType": "JTAG",
   "files.associations": {
-    "string.h": "c"
+    "string.h": "c",
+    "esp_sntp.h": "c"
   }
 }

@@ -1,15 +1,15 @@
 #include <stdio.h>
-#include "time_sinc.h"  // Inclua o header
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "time_sinc.h"
 
-void app_main() 
+void app_main(void)
 {
-    printf("Iniciando sincronização de tempo...\n");
-    
-    // Chame as funções do time_sinc.c
-    iniciar_sntp();
-    
-    while(1) {
-        printf_time();
-        vTaskDelay(5000 / portTICK_PERIOD_MS);  // A cada 5 segundos
+    // Configura o horário manualmente (ano, mês, dia, hora, minuto, segundo)
+    set_time_manually(2025, 8, 6, 14, 30, 0); // Exemplo: 6/8/2025, 14:30:00
+
+    while (1) {
+        print_local_time(); // Mostra o horário atual
+        vTaskDelay(1000 / portTICK_PERIOD_MS); // Atualiza a cada 1 segundo
     }
 }
