@@ -21,7 +21,7 @@ WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org", -3 * 3600, 60000); // UTC-3 com atualização a cada 60s
 RTC_DS3231 rtc;
 
-const int leds[NUM_LEDS] = {13, 12, 14, 33, 32, 34, 35};
+const int leds[NUM_LEDS] = {13, 12, 14, 33, 32, 22, 23};
 String horarios[NUM_LEDS]; 
 bool ledStates[NUM_LEDS] = {false};
 
@@ -289,4 +289,5 @@ float getBateriaPercentual() {
   
   return percentual;
 }
+
 
