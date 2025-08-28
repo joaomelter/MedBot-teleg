@@ -8,9 +8,9 @@
 
 // ===== CONSTANTES E DEFINIÇÕES =====
 #define NUM_LEDS 7
-#define LED_R 25
-#define LED_G 26
-#define LED_B 27
+#define LED_R 18
+#define LED_G 19
+#define LED_B 21
 #define BATERIA_PIN 34
 #define PORTA_SERVIDOR 80
 
@@ -289,5 +289,6 @@ float getBateriaPercentual() {
   
   return percentual;
 }
+
 
 
