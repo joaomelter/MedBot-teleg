@@ -9,6 +9,7 @@ Esp32
 18 fios Jumper
 6 Resistores
 2 Pilhas recarregáveis 
+500g Filamento de impressora 3D
 ------------------------
 Pinout:
 ------------------------
