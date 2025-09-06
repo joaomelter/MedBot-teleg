@@ -19,5 +19,5 @@ R: 18
 G: 19
 B: 21
 ------------------------
-
-
+Baud: 115200
+Url: https://edd738ba01d9.ngrok-free.app/led_status
