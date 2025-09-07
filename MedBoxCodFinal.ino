@@ -20,8 +20,8 @@
 // ======================================================================
 
 // --- 1. CONFIGURAÇÕES DO WI-FI (PREENCHA COM OS DADOS DA SUA CASA) ---
-const char* ssid = "CLARO_2GBAE61C";
-const char* password = "Rd@c221973";
+const char* ssid = "NOME_REDE_WIFI";
+const char* password = "SENHA_REDE_WIFI";
 
 // --- 2. CONFIGURAÇÕES DO SERVIDOR (SEU AMIGO VAI TE ENVIAR ESTA URL) ---
 // Cole a URL que seu amigo te passar, mantendo o "https://" e o "/led_status" no final.
